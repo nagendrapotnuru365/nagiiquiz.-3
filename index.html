@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="WeatherNow - A responsive weather website using HTML, CSS and JavaScript."
+    >
+
+    <title>WeatherNow - Weather System</title>
+
+    <!-- CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+
+        <!-- Website Logo -->
+        <a href="#" class="logo">
+            Weather<span>Now</span>
+        </a>
+
+        <!-- Celsius / Fahrenheit button -->
+        <button id="unitBtn" class="unit-btn">
+            °C / °F
+        </button>
+
+    </header>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main>
+
+        <!-- ================= HERO SECTION ================= -->
+        <section class="hero">
+
+            <!-- LEFT SIDE -->
+            <div class="hero-content">
+
+                <p class="eyebrow">
+                    WEATHER SYSTEM
+                </p>
+
+                <h1>
+                    Know your weather before you go.
+                </h1>
+
+                <p class="subtitle">
+                    Search any city to view current weather conditions,
+                    temperature, humidity and wind information.
+                </p>
+
+
+                <!-- ================= SEARCH FORM ================= -->
+                <form id="searchForm" class="search-box">
+
+                    <input
+                        type="text"
+                        id="cityInput"
+                        placeholder="Enter city name, e.g. Hyderabad"
+                        autocomplete="off"
+                        required
+                    >
+
+                    <button type="submit">
+                        Search
+                    </button>
+
+                </form>
+
+
+                <!-- Location Button -->
+                <button id="locationBtn" class="location-btn">
+                    📍 Use my location
+                </button>
+
+
+                <!-- Error / Loading message -->
+                <p id="status" class="status"></p>
+
+            </div>
+
+
+            <!-- ================= WEATHER CARD ================= -->
+            <div id="weatherCard" class="weather-card hidden">
+
+                <!-- Weather top section -->
+                <div class="weather-top">
+
+                    <div>
+
+                        <!-- City name -->
+                        <p id="cityName">
+                            City
+                        </p>
+
+                        <!-- Date and time -->
+                        <p id="weatherDate">
+                            --
+                        </p>
+
+                    </div>
+
+
+                    <!-- Weather icon -->
+                    <span id="weatherIcon" class="weather-icon">
+                        ☀️
+                    </span>
+
+                </div>
+
+
+                <!-- ================= TEMPERATURE ================= -->
+
+                <div class="temperature">
+
+                    <span id="temperature">
+                        --
+                    </span>
+
+                    <sup id="tempUnit">
+                        °C
+                    </sup>
+
+                </div>
+
+
+                <!-- Weather description -->
+                <h2 id="description">
+                    --
+                </h2>
+
+
+                <!-- Feels like -->
+                <p>
+                    Feels like
+                    <strong id="feelsLike">
+                        --
+                    </strong>
+                </p>
+
+
+                <!-- ================= WEATHER DETAILS ================= -->
+
+                <div class="details-grid">
+
+                    <!-- Humidity -->
+                    <div class="detail">
+
+                        <span>
+                            💧
+                        </span>
+
+                        <small>
+                            Humidity
+                        </small>
+
+                        <strong id="humidity">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <!-- Wind -->
+                    <div class="detail">
+
+                        <span>
+                            💨
+                        </span>
+
+                        <small>
+                            Wind
+                        </small>
+
+                        <strong id="wind">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <!-- Pressure -->
+                    <div class="detail">
+
+                        <span>
+                            🌡️
+                        </span>
+
+                        <small>
+                            Pressure
+                        </small>
+
+                        <strong id="pressure">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <!-- Visibility -->
+                    <div class="detail">
+
+                        <span>
+                            👁️
+                        </span>
+
+                        <small>
+                            Visibility
+                        </small>
+
+                        <strong id="visibility">
+                            --
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= INFORMATION SECTION ================= -->
+
+        <section class="info-section">
+
+            <div class="section-title">
+
+                <p class="eyebrow">
+                    HOW IT WORKS
+                </p>
+
+                <h2>
+                    Weather information at a glance
+                </h2>
+
+            </div>
+
+
+            <div class="info-grid">
+
+                <!-- Card 1 -->
+                <article>
+
+                    <span>
+                        🔎
+                    </span>
+
+                    <h3>
+                        Search a city
+                    </h3>
+
+                    <p>
+                        Enter a city name and the system requests
+                        its latest weather data.
+                    </p>
+
+                </article>
+
+
+                <!-- Card 2 -->
+                <article>
+
+                    <span>
+                        🌦️
+                    </span>
+
+                    <h3>
+                        View conditions
+                    </h3>
+
+                    <p>
+                        See temperature, weather description,
+                        humidity, pressure and wind.
+                    </p>
+
+                </article>
+
+
+                <!-- Card 3 -->
+                <article>
+
+                    <span>
+                        📍
+                    </span>
+
+                    <h3>
+                        Use location
+                    </h3>
+
+                    <p>
+                        Allow browser location access to request
+                        weather for your coordinates.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            WeatherNow • Built with HTML, CSS & JavaScript
+        </p>
+
+        <p class="footer-note">
+            Weather data provider: OpenWeather.
+            Add your API key in script.js.
+        </p>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
